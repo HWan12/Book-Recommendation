@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Rating the Books</h1>
+
+<form class="rating" method="POST" action="{{ url_for('result') }}">
+  <fieldset class = "rating">
+    <legend>{{ book_title0 }}</legend>
+    <input type="radio" id="star5" name="rating0" value="{{book_id0}} 5 " /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating0" value="{{book_id0}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating0" value="{{book_id0}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating0" value="{{book_id0}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating0" value="{{book_id0}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title1 }}</legend>
+    <input type="radio" id="star5" name="rating1" value="{{book_id1}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating1" value="{{book_id1}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating1" value="{{book_id1}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating1" value="{{book_id1}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating1" value="{{book_id1}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title2 }}</legend>
+    <input type="radio" id="star5" name="rating2" value="{{book_id2}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating2" value="{{book_id2}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating2" value="{{book_id2}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating2" value="{{book_id2}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating2" value="{{book_id2}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title3 }}</legend>
+    <input type="radio" id="star5" name="rating3" value="{{book_id3}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating3" value="{{book_id3}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating3" value="{{book_id3}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating3" value="{{book_id3}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating3" value="{{book_id3}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title4 }}</legend>
+    <input type="radio" id="star5" name="rating4" value="{{book_id4}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating4" value="{{book_id4}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating4" value="{{book_id4}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating4" value="{{book_id4}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating4" value="{{book_id4}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title5 }}</legend>
+    <input type="radio" id="star5" name="rating5" value="{{book_id5}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating5" value="{{book_id5}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating5" value="{{book_id5}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating5" value="{{book_id5}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating5" value="{{book_id5}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title6 }}</legend>
+    <input type="radio" id="star5" name="rating6" value="{{book_id6}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating6" value="{{book_id6}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating6" value="{{book_id6}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating6" value="{{book_id6}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating6" value="{{book_id6}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title7 }}</legend>
+    <input type="radio" id="star5" name="rating7" value="{{book_id7}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating7" value="{{book_id7}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating7" value="{{book_id7}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating7" value="{{book_id7}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating7" value="{{book_id7}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title8 }}</legend>
+    <input type="radio" id="star5" name="rating8" value="{{book_id8}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating8" value="{{book_id8}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating8" value="{{book_id8}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating8" value="{{book_id8}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating8" value="{{book_id8}} 1" /><label for="star1">1 </label>
+  </fieldset>
+  <fieldset class = "rating">
+    <legend>{{ book_title9 }}</legend>
+    <input type="radio" id="star5" name="rating9" value="{{book_id9}} 5" /><label for="star5">5 </label>
+    <input type="radio" id="star4" name="rating9" value="{{book_id9}} 4" /><label for="star4">4 </label>
+    <input type="radio" id="star3" name="rating9" value="{{book_id9}} 3" /><label for="star3">3 </label>
+    <input type="radio" id="star2" name="rating9" value="{{book_id9}} 2" /><label for="star2">2 </label>
+    <input type="radio" id="star1" name="rating9" value="{{book_id9}} 1" /><label for="star1">1 </label>
+  </fieldset>
+<button type="submit" class="btn">Submit</button></form>
+
+</form>
+
+</body>
+</html>

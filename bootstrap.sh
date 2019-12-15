@@ -1,0 +1,12 @@
+pip install flask
+pip install pyspark
+pip install click
+pip install gunicorn
+pip install itsdangerous
+pip install Jinja2
+pip install MarkupSafe
+pip install pytz
+pip install requests
+pip install Werkzeug
+pip install google-cloud-storage
+pip install pandas
