@@ -13,6 +13,8 @@ from pyspark.sql.functions import rand
 from flask import Flask, flash, redirect, render_template, request, url_for, session
 import pandas as pd
 import pyspark
+#from Engine import RecommendationEngine
+
 
 #sc = pyspark.SparkContext('local[1]')
 #qlContext = SQLContext(sc)
@@ -27,6 +29,8 @@ app.config['UPLOAD_FOLDER'] = VIZ_FOLDER
 spark = SparkSession.builder.master('local').appName('recommender').getOrCreate()
 df_mb = spark.read.json("Data/metaBooks.json")
 
+# This line will be uncommented when we integrate main.py with the RecommendationEngine running on the cluster.
+#r_engine = RecommendationEngine()
 
 @app.route('/')
 def home():
@@ -44,6 +48,7 @@ def explore():
 @app.route('/recommendation')
 def recommendation():
     book_list=[]
+    #list_of_books = r_engine.get_books()
     list_books = df_mb.where(df_mb.title!='None').select(['asin','title']).orderBy(rand()).limit(10).collect()
     for book in list_books:
         book_list.append((book['asin'],book['title']))
@@ -71,17 +76,16 @@ def result():
     df_ratings = pd.DataFrame(book_rating, 
                columns =['asin', 'overall'])
     df_ratings['overall']=df_ratings['overall'].astype(float)
+    
+    new_user_id = ''.join(random.choice('0123456789ABCDEF') for i in range(14))
+    df_ratings['reviewerID']=new_user_id
+    
+    #new_user_recommendations = r_engine.predict_ratings(new_user_id,df_ratings)
 
-    #df_newuser = appl.add_new_user(spark,df_ratings)
-    #new_user_predictions = appl.predict_ratings_new_user(df_newuser)
-    #new_user_predictions =new_user_predictions.toPandas()
-    #new_user_predictions.createTempView("newuserreviews")
-    #df = spark.sql('select * from newuserreviews by prediction DESC')
-    #df = df_newuser.toPandas()
    
     #return render_template('result.html',  tables=[new_user_predictions.to_html(classes='data', header="true")])
     return render_template('result.html', tables=[df_ratings.to_html(classes='data', header="true")])
 
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=5001,debug=True)
