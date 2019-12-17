@@ -23,10 +23,10 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = VIZ_FOLDER
 
+#commented out the below two line if want to deploy on app engine
 spark = SparkSession.builder.master('local').appName('recommender').getOrCreate()
 df_mb = spark.read.json("Data/metaBooks.json")
-#df_mb = spark.read.json("gs://sh_books_bucket/metaBooks.json")
-#df_mb_cached = df_mb.cache()
+
 
 @app.route('/')
 def home():
@@ -40,6 +40,7 @@ def explore():
     viz3 = os.path.join(app.config['UPLOAD_FOLDER'], 'rating by sales rank.png')
     return render_template("explore3.html", viz1 = viz1, viz2=viz2, viz3=viz3)
 
+#commented out the below two functions if want to deploy on app engine
 @app.route('/recommendation')
 def recommendation():
     book_list=[]
