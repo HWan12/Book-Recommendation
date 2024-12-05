@@ -4,7 +4,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 pytz==2018.9
-requests==2.21.0
+requests==2.22.0
 Werkzeug
 google-cloud-storage
 pyspark
